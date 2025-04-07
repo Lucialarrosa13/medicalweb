@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediAgenda Uruguay - Encuentra y agenda tus consultas médicas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li><a href="doctores.html">Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons" id="headerButtons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="doctores.html">Médicos</a></li>
+                <li><a href="#">Mutualistas</a></li>
+                <li><a href="#">Cómo Funciona</a></li>
+                <li class="mobile-auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Encuentra al <span>médico ideal</span> para tu salud</h1>
+                    <p>Conectamos pacientes con los mejores especialistas médicos en Uruguay. Agenda tu consulta de forma rápida y sencilla, sin largas esperas ni complicaciones.</p>
+                    <div class="hero-buttons">
+                        <a href="doctores.html" class="btn btn-primary btn-lg">Buscar Médicos</a>
+                        <a href="#como-funciona" class="btn btn-outline btn-lg">Conocer Más</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <p class="stat-number">1,500+</p>
+                            <p class="stat-text">Médicos Verificados</p>
+                        </div>
+                        <div class="stat">
+                            <p class="stat-number">40+</p>
+                            <p class="stat-text">Especialidades</p>
+                        </div>
+                        <div class="stat">
+                            <p class="stat-number">50k+</p>
+                            <p class="stat-text">Pacientes Satisfechos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img/doctorasonriendo.jpg" alt="Doctor sonriendo">
+                </div>
+            </div>
+        </div>
+        <div class="hero-gradient"></div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-card">
+                <h2>Encuentra a tu médico en segundos</h2>
+                <form id="searchForm" class="search-form" action="doctores.html" method="get">
+                    <div class="search-inputs">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" name="buscar" placeholder="Nombre del médico o especialidad" id="searchTerm">
+                        </div>
+                        <div class="search-input">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="location" name="ubicacion">
+                                <option value="">Ubicación</option>
+                                <option value="montevideo">Montevideo</option>
+                                <option value="canelones">Canelones</option>doctor
+                                <option value="maldonado">Maldonado</option>
+                                <option value="colonia">Colonia</option>
+                                <option value="salto">Salto</option>
+                            </select>
+                        </div>
+                        <div class="search-input">
+                            <i class="fas fa-hospital"></i>
+                            <select id="clinica" name="clinica">
+                                <option value="">Mutualista</option>
+                                <option value="casmu">CASMU</option>
+                                <option value="smu">SMU</option>
+                                <option value="asociacion-espanola">Asociación Española</option>
+                                <option value="medica-uruguaya">Médica Uruguaya</option>
+                                <option value="hospital-britanico">Hospital Británico</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </form>
+                <div class="popular-searches">
+                    <p>Búsquedas populares:</p>
+                    <div class="tags">
+                        <a href="doctores.html?especialidad=cardiologia" class="tag">Cardiología</a>
+                        <a href="doctores.html?especialidad=pediatria" class="tag">Pediatría</a>
+                        <a href="doctores.html?especialidad=dermatologia" class="tag">Dermatología</a>
+                        <a href="doctores.html?especialidad=ginecologia" class="tag">Ginecología</a>
+                        <a href="doctores.html?especialidad=oftalmologia" class="tag">Oftalmología</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specialties">
+        <div class="container">
+            <div class="section-header">
+                <h2>Especialidades Populares</h2>
+                <p>Encuentra especialistas médicos en las áreas más demandadas para cuidar de tu salud</p>
+            </div>
+            <div class="specialties-grid">
+                <a href="doctores.html?especialidad=cardiologia" class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Cardiología</h3>
+                    <p>Especialistas en el corazón y sistema circulatorio</p>
+                </a>
+                <a href="doctores.html?especialidad=neurologia" class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurología</h3>
+                    <p>Tratamiento de trastornos del sistema nervioso</p>
+                </a>
+                <a href="doctores.html?especialidad=oftalmologia" class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Oftalmología</h3>
+                    <p>Cuidado de la salud visual y ocular</p>
+                </a>
+                <a href="doctores.html?especialidad=medicina-general" class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Medicina General</h3>
+                    <p>Atención médica primaria y preventiva</p>
+                </a>
+                <a href="doctores.html?especialidad=pediatria" class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pediatría</h3>
+                    <p>Cuidado de la salud de niños y adolescentes</p>
+                </a>
+                <a href="doctores.html?especialidad=traumatologia" class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Traumatología</h3>
+                    <p>Tratamiento de lesiones y trastornos óseos</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="top-doctors">
+        <div class="container">
+            <div class="section-header-flex">
+                <div>
+                    <h2>Médicos Destacados</h2>
+                    <p>Profesionales con las mejores calificaciones y experiencia comprobada</p>
+                </div>
+                <a href="doctores.html" class="btn btn-outline">Ver Todos los Médicos</a>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="img/doctorasonriendo.jpg" alt="Dra. Ana Martínez">
+                    </div>
+                    <div class="doctor-content">
+                        <div class="doctor-header">
+                            <span class="doctor-specialty">Cardiología</span>
+                            <div class="doctor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                                <span class="reviews">(124)</span>
+                            </div>
+                        </div>
+                        <h3>Dra. Ana Martínez</h3>
+                        <div class="doctor-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Montevideo</span>
+                        </div>
+                        <p class="doctor-price">$1200 UYU / consulta</p>
+                    </div>
+                    <div class="doctor-footer">
+                        <a href="doctor-detalle.html?id=1" class="btn btn-primary btn-block">
+                            <i class="fas fa-calendar-alt"></i>
+                            Agendar Consulta
+                        </a>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="img/doc.jpg" alt="Dr. Carlos Rodríguez">
+                    </div>
+                    <div class="doctor-content">
+                        <div class="doctor-header">
+                            <span class="doctor-specialty">Neurología</span>
+                            <div class="doctor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                                <span class="reviews">(98)</span>
+                            </div>
+                        </div>
+                        <h3>Dr. Carlos Rodríguez</h3>
+                        <div class="doctor-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Montevideo</span>
+                        </div>
+                        <p class="doctor-price">$1500 UYU / consulta</p>
+                    </div>
+                    <div class="doctor-footer">
+                        <a href="doctor-detalle.html?id=2" class="btn btn-primary btn-block">
+                            <i class="fas fa-calendar-alt"></i>
+                            Agendar Consulta
+                        </a>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="img/dra.jpg" alt="Dra. Laura Sánchez">
+                    </div>
+                    <div class="doctor-content">
+                        <div class="doctor-header">
+                            <span class="doctor-specialty">Pediatría</span>
+                            <div class="doctor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                                <span class="reviews">(156)</span>
+                            </div>
+                        </div>
+                        <h3>Dra. Laura Sánchez</h3>
+                        <div class="doctor-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Canelones</span>
+                        </div>
+                        <p class="doctor-price">$1100 UYU / consulta</p>
+                    </div>
+                    <div class="doctor-footer">
+                        <a href="doctor-detalle.html?id=3" class="btn btn-outline btn-block disabled">
+                            <i class="fas fa-calendar-alt"></i>
+                            No Disponible
+                        </a>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="img/doctorsonriendo.jpg" alt="Dr. Miguel Hernández">
+                    </div>
+                    <div class="doctor-content">
+                        <div class="doctor-header">
+                            <span class="doctor-specialty">Dermatología</span>
+                            <div class="doctor-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                                <span class="reviews">(87)</span>
+                            </div>
+                        </div>
+                        <h3>Dr. Miguel Hernández</h3>
+                        <div class="doctor-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Montevideo</span>
+                        </div>
+                        <p class="doctor-price">$1300 UYU / consulta</p>
+                    </div>
+                    <div class="doctor-footer">
+                        <a href="doctor-detalle.html?id=4" class="btn btn-primary btn-block">
+                            <i class="fas fa-calendar-alt"></i>
+                            Agendar Consulta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Cómo Funciona?</h2>
+                <p>Agendar una consulta médica nunca fue tan fácil. Seguí estos simples pasos</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Buscá un médico</h3>
+                    <p>Encontrá al especialista ideal utilizando filtros por especialidad, ubicación o mutualista.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Agendá tu consulta</h3>
+                    <p>Seleccioná el día y horario que mejor se adapte a tu agenda con nuestro sistema de reservas en tiempo real.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Recibí atención médica</h3>
+                    <p>Asistí a tu consulta o conectate por videollamada para recibir la atención médica que necesitás.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para cuidar tu salud?</h2>
+                <p>Registrate ahora y comenzá a gestionar tus consultas médicas de forma fácil y rápida.</p>
+                <a href="registro.html" class="btn btn-primary btn-lg">Crear Cuenta Gratis</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </div>
+                    <p>Conectando pacientes con los mejores especialistas médicos para un cuidado de salud de calidad en Uruguay.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html">Buscar Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="#">Blog de Salud</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suscribite</h3>
+                    <p>Recibí nuestras últimas noticias y ofertas especiales.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2023</span> MediAgenda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            // Set current year in footer
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Médico - MediAgenda Uruguay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html" class="active">Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons" id="headerButtons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="doctores.html">Médicos</a></li>
+                <li><a href="#">Mutualistas</a></li>
+                <li><a href="#">Cómo Funciona</a></li>
+                <li class="mobile-auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="doctor-detail">
+        <div class="container">
+            <div class="doctor-detail-container">
+                <div class="doctor-detail-main">
+                    <div class="doctor-profile">
+                        <div class="doctor-profile-image">
+                            <img src="https://placehold.co/300x300/00a8e8/FFFFFF.png?text=Doctor+1" alt="Dra. Ana Martínez" id="doctorImage">
+                        </div>
+                        <div class="doctor-profile-info">
+                            <div class="doctor-tags">
+                                <span class="doctor-specialty" id="doctorSpecialty">Cardiología</span>
+                                <div class="doctor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span id="doctorRating">4.9</span>
+                                    <span class="reviews">(<span id="doctorReviews">124</span> reseñas)</span>
+                                </div>
+                            </div>
+                            <h1 id="doctorName">Dra. Ana Martínez</h1>
+                            <div class="doctor-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="doctorLocation">Av. 18 de Julio 1234, Montevideo</span>
+                            </div>
+                            <p class="doctor-bio" id="doctorBio">
+                                Especialista en cardiología con más de 15 años de experiencia. Certificada por la Sociedad Uruguaya de Cardiología y miembro del Colegio Médico del Uruguay. Especializada en el diagnóstico y tratamiento de enfermedades cardiovasculares.
+                            </p>
+                            <div class="doctor-actions">
+                                <button class="btn btn-primary btn-lg" id="scheduleAppointmentBtn">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Agendar Consulta
+                                </button>
+                                <button class="btn btn-outline btn-lg">
+                                    <i class="fas fa-phone"></i>
+                                    Contactar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-tabs">
+                        <div class="tabs-header">
+                            <button class="tab-btn active" data-tab="info">Información</button>
+                            <button class="tab-btn" data-tab="services">Servicios</button>
+                            <button class="tab-btn" data-tab="schedule">Horarios</button>
+                            <button class="tab-btn" data-tab="reviews">Reseñas</button>
+                        </div>
+                        <div class="tabs-content">
+                            <div class="tab-pane active" id="info">
+                                <div class="info-section">
+                                    <h3>Educación</h3>
+                                    <div class="info-items">
+                                        <div class="info-item">
+                                            <div class="info-icon">
+                                                <i class="fas fa-graduation-cap"></i>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4>Doctorado en Medicina</h4>
+                                                <p>Universidad de la República • 2005</p>
+                                            </div>
+                                        </div>
+                                        <div class="info-item">
+                                            <div class="info-icon">
+                                                <i class="fas fa-graduation-cap"></i>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4>Especialidad en Cardiología</h4>
+                                                <p>Hospital de Clínicas • 2008</p>
+                                            </div>
+                                        </div>
+                                        <div class="info-item">
+                                            <div class="info-icon">
+                                                <i class="fas fa-graduation-cap"></i>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4>Subespecialidad en Cardiología Intervencionista</h4>
+                                                <p>Instituto Nacional de Cirugía Cardíaca • 2010</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info-section">
+                                    <h3>Experiencia</h3>
+                                    <div class="info-items">
+                                        <div class="info-item">
+                                            <div class="info-icon">
+                                                <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4>Cardióloga Senior</h4>
+                                                <p>Hospital Británico • 2010 - Presente</p>
+                                            </div>
+                                        </div>
+                                        <div class="info-item">
+                                            <div class="info-icon">
+                                                <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4>Investigadora Asociada</h4>
+                                                <p>Instituto Nacional de Cirugía Cardíaca • 2008 - 2010</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info-section">
+                                    <h3>Mutualistas</h3>
+                                    <div class="mutualistas-list">
+                                        <span class="mutualista-tag">CASMU</span>
+                                        <span class="mutualista-tag">Asociación Española</span>
+                                        <span class="mutualista-tag">Hospital Británico</span>
+                                        <span class="mutualista-tag">Blue Cross & Blue Shield</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="services">
+                                <div class="services-section">
+                                    <h3>Servicios Ofrecidos</h3>
+                                    <ul class="services-list">
+                                        <li><i class="fas fa-check-circle"></i> Consulta cardiológica</li>
+                                        <li><i class="fas fa-check-circle"></i> Electrocardiograma</li>
+                                        <li><i class="fas fa-check-circle"></i> Ecocardiograma</li>
+                                        <li><i class="fas fa-check-circle"></i> Prueba de esfuerzo</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-section">
+                                    <h3>Precios</h3>
+                                    <div class="price-item">
+                                        <div class="price-name">Consulta inicial</div>
+                                        <div class="price-value">$1200 UYU</div>
+                                    </div>
+                                    <div class="price-item">
+                                        <div class="price-name">Consulta de seguimiento</div>
+                                        <div class="price-value">$900 UYU</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="schedule">
+                                <div class="schedule-section">
+                                    <h3>Horarios de Atención</h3>
+                                    <div class="schedule-items">
+                                        <div class="schedule-item">
+                                            <div class="schedule-day">Lunes</div>
+                                            <div class="schedule-hours">9:00 - 14:00</div>
+                                        </div>
+                                        <div class="schedule-item">
+                                            <div class="schedule-day">Martes</div>
+                                            <div class="schedule-hours">9:00 - 14:00</div>
+                                        </div>
+                                        <div class="schedule-item">
+                                            <div class="schedule-day">Miércoles</div>
+                                            <div class="schedule-hours">15:00 - 20:00</div>
+                                        </div>
+                                        <div class="schedule-item">
+                                            <div class="schedule-day">Jueves</div>
+                                            <div class="schedule-hours">9:00 - 14:00</div>
+                                        </div>
+                                        <div class="schedule-item">
+                                            <div class="schedule-day">Viernes</div>
+                                            <div class="schedule-hours">15:00 - 20:00</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="reviews">
+                                <div class="reviews-header">
+                                    <h3>Reseñas de Pacientes</h3>
+                                    <button class="btn btn-primary" id="writeReviewBtn">Escribir Reseña</button>
+                                </div>
+                                <div class="reviews-list">
+                                    <div class="review-item">
+                                        <div class="review-header">
+                                            <div class="review-author">
+                                                <img src="https://placehold.co/50x50/00a8e8/FFFFFF.png?text=User" alt="Roberto Méndez">
+                                                <div>
+                                                    <h4>Roberto Méndez</h4>
+                                                    <p>15 de marzo, 2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">Excelente profesional. La Dra. Martínez me explicó detalladamente mi condición y las opciones de tratamiento. Muy recomendada.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-detail-sidebar">
+                    <div class="appointment-card">
+                        <h3>Agendar Consulta</h3>
+                        <div class="appointment-price">
+                            <p>Precio de consulta</p>
+                            <p class="price">$1200 UYU</p>
+                        </div>
+                        <div class="appointment-form">
+                            <div class="form-group">
+                                <label>Selecciona una fecha</label>
+                                <div class="date-selector">
+                                    <button class="date-btn active">
+                                        <span class="day">Lun</span>
+                                        <span class="date">15</span>
+                                    </button>
+                                    <button class="date-btn">
+                                        <span class="day">Mar</span>
+                                        <span class="date">16</span>
+                                    </button>
+                                    <button class="date-btn">
+                                        <span class="day">Mié</span>
+                                        <span class="date">17</span>
+                                    </button>
+                                    <button class="date-btn">
+                                        <span class="day">Jue</span>
+                                        <span class="date">18</span>
+                                    </button>
+                                    <button class="date-btn">
+                                        <span class="day">Vie</span>
+                                        <span class="date">19</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Horarios disponibles</label>
+                                <div class="time-selector">
+                                    <button class="time-btn">9:00</button>
+                                    <button class="time-btn">10:00</button>
+                                    <button class="time-btn">11:00</button>
+                                    <button class="time-btn">12:00</button>
+                                    <button class="time-btn">13:00</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-block" id="confirmAppointmentBtn">Confirmar Consulta</button>
+                            <p class="appointment-note">Puedes cancelar hasta 24 horas antes sin costo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Confirmar Consulta</h2>
+            <div class="appointment-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Médico:</span>
+                    <span class="summary-value" id="summaryDoctor">Dra. Ana Martínez</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Especialidad:</span>
+                    <span class="summary-value" id="summarySpecialty">Cardiología</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Fecha:</span>
+                    <span class="summary-value" id="summaryDate">Lunes, 15 de Mayo 2023</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Hora:</span>
+                    <span class="summary-value" id="summaryTime">9:00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Precio:</span>
+                    <span class="summary-value" id="summaryPrice">$1200 UYU</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelAppointmentBtn">Cancelar</button>
+                <button class="btn btn-primary" id="finalConfirmBtn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="loginRequiredModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Iniciar Sesión Requerido</h2>
+            <p>Para agendar una consulta, necesitás iniciar sesión o crear una cuenta.</p>
+            <div class="modal-actions">
+                <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
+                <a href="registro.html" class="btn btn-outline">Registrarse</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>¡Consulta Agendada!</h2>
+            <p>Tu consulta ha sido agendada exitosamente. Recibirás un correo electrónico con los detalles.</p>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="closeSuccessBtn">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </div>
+                    <p>Conectando pacientes con los mejores especialistas médicos para un cuidado de salud de calidad en Uruguay.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html">Buscar Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                        <li><a href="#">Blog de Salud</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suscribite</h3>
+                    <p>Recibí nuestras últimas noticias y ofertas especiales.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2023</span> MediAgenda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            // Set current year in footer
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+            
+            // Tab functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and panes
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to current tab and pane
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Date selection
+            const dateBtns = document.querySelectorAll('.date-btn');
+            dateBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    dateBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Time selection
+            const timeBtns = document.querySelectorAll('.time-btn');
+            timeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    timeBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Schedule appointment button
+            const scheduleAppointmentBtn = document.getElementById('scheduleAppointmentBtn');
+            if (scheduleAppointmentBtn) {
+                scheduleAppointmentBtn.addEventListener('click', function() {
+                    // Scroll to appointment form
+                    const appointmentCard = document.querySelector('.appointment-card');
+                    if (appointmentCard) {
+                        appointmentCard.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+            
+            // Confirm appointment button
+            const confirmAppointmentBtn = document.getElementById('confirmAppointmentBtn');
+            if (confirmAppointmentBtn) {
+                confirmAppointmentBtn.addEventListener('click', function() {
+                    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+                    
+                    if (!isLoggedIn) {
+                        // Show login required modal
+                        showModal('loginRequiredModal');
+                        return;
+                    }
+                    
+                    // Get selected date and time
+                    const selectedDate = document.querySelector('.date-btn.active');
+                    const selectedTime = document.querySelector('.time-btn.active');
+                    
+                    // Validate selections
+                    if (!selectedDate || !selectedTime) {
+                        alert('Por favor selecciona una fecha y hora para tu consulta.');
+                        return;
+                    }
+                    
+                    // Show confirmation modal
+                    showModal('appointmentModal');
+                });
+            }
+            
+            // Modal functionality
+            const closeButtons = document.querySelectorAll('.close-modal');
+            closeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Cancel appointment button
+            const cancelAppointmentBtn = document.getElementById('cancelAppointmentBtn');
+            if (cancelAppointmentBtn) {
+                cancelAppointmentBtn.addEventListener('click', function() {
+                    const appointmentModal = document.getElementById('appointmentModal');
+                    if (appointmentModal) {
+                        appointmentModal.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Final confirm button
+            const finalConfirmBtn = document.getElementById('finalConfirmBtn');
+            if (finalConfirmBtn) {
+                finalConfirmBtn.addEventListener('click', function() {
+                    // Hide appointment modal
+                    const appointmentModal = document.getElementById('appointmentModal');
+                    if (appointmentModal) {
+                        appointmentModal.classList.remove('active');
+                    }
+                    
+                    // Show success modal
+                    showModal('successModal');
+                });
+            }
+            
+            // Close success button
+            const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+            if (closeSuccessBtn) {
+                closeSuccessBtn.addEventListener('click', function() {
+                    const successModal = document.getElementById('successModal');
+                    if (successModal) {
+                        successModal.classList.remove('active');
+                    }
+                });
+            }
+        });
+        
+        // Function to show a modal
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
+

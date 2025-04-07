@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Médicos - MediAgenda Uruguay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html" class="active">Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons" id="headerButtons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="doctores.html" class="active">Médicos</a></li>
+                <li><a href="#">Mutualistas</a></li>
+                <li><a href="#">Cómo Funciona</a></li>
+                <li class="mobile-auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Encontrá a tu médico ideal</h1>
+            <div class="search-bar">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar por nombre o especialidad" id="doctorSearch">
+                </div>
+                <div class="search-input">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <select id="locationFilter">
+                        <option value="">Ubicación</option>
+                        <option value="montevideo">Montevideo</option>
+                        <option value="canelones">Canelones</option>
+                        <option value="maldonado">Maldonado</option>
+                        <option value="colonia">Colonia</option>
+                        <option value="salto">Salto</option>
+                    </select>
+                </div>
+                <div class="search-input">
+                    <i class="fas fa-hospital"></i>
+                    <select id="clinicaFilter">
+                        <option value="">Mutualista</option>
+                        <option value="casmu">CASMU</option>
+                        <option value="smu">SMU</option>
+                        <option value="asociacion-espanola">Asociación Española</option>
+                        <option value="medica-uruguaya">Médica Uruguaya</option>
+                        <option value="hospital-britanico">Hospital Británico</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="searchButton">
+                    <i class="fas fa-filter"></i>
+                    Filtrar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="doctors-list">
+        <div class="container">
+            <div class="doctors-container">
+                <div class="filters">
+                    <div class="filter-group">
+                        <h3>Especialidades</h3>
+                        <div class="filter-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="specialty" value="cardiologia">
+                                <span class="checkmark"></span>
+                                Cardiología
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="specialty" value="neurologia">
+                                <span class="checkmark"></span>
+                                Neurología
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="specialty" value="pediatria">
+                                <span class="checkmark"></span>
+                                Pediatría
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="specialty" value="dermatologia">
+                                <span class="checkmark"></span>
+                                Dermatología
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="specialty" value="ginecologia">
+                                <span class="checkmark"></span>
+                                Ginecología
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="specialty" value="oftalmologia">
+                                <span class="checkmark"></span>
+                                Oftalmología
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Precio</h3>
+                        <div class="filter-options">
+                            <div class="range-slider">
+                                <input type="range" min="500" max="3000" value="1500" class="slider" id="priceRange">
+                                <div class="range-values">
+                                    <span>$500 UYU</span>
+                                    <span id="priceValue">$1500 UYU</span>
+                                    <span>$3000 UYU</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Calificación</h3>
+                        <div class="filter-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="rating" value="5">
+                                <span class="checkmark"></span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="rating" value="4">
+                                <span class="checkmark"></span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="rating" value="3">
+                                <span class="checkmark"></span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctors-results">
+                    <div class="results-header">
+                        <p>Mostrando <span id="resultsCount">6</span> médicos</p>
+                        <div class="sort-options">
+                            <label for="sortBy">Ordenar por:</label>
+                            <select id="sortBy">
+                                <option value="rating">Mejor calificados</option>
+                                <option value="price-asc">Precio: menor a mayor</option>
+                                <option value="price-desc">Precio: mayor a menor</option>
+                                <option value="reviews">Más reseñas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="doctors-grid">
+                        <div class="doctor-card">
+                            <div class="doctor-image">
+                                <img src="img/doctorasonriendo2.jpg" alt="Dra. Ana Martínez">
+                            </div>
+                            <div class="doctor-content">
+                                <div class="doctor-header">
+                                    <span class="doctor-specialty">Cardiología</span>
+                                    <div class="doctor-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9</span>
+                                        <span class="reviews">(124)</span>
+                                    </div>
+                                </div>
+                                <h3>Dra. Ana Martínez</h3>
+                                <div class="doctor-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Montevideo</span>
+                                </div>
+                                <div class="doctor-clinic">
+                                    <i class="fas fa-hospital"></i>
+                                    <span>CASMU, Asociación Española</span>
+                                </div>
+                                <p class="doctor-price">$1200 UYU / consulta</p>
+                            </div>
+                            <div class="doctor-footer">
+                                <a href="doctor-detalle.html?id=1" class="btn btn-primary btn-block">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Agendar Consulta
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doctor-card">
+                            <div class="doctor-image">
+                                <img src="img/doctorsonriendo2.jpg" alt="Dr. Carlos Rodríguez">
+                            </div>
+                            <div class="doctor-content">
+                                <div class="doctor-header">
+                                    <span class="doctor-specialty">Neurología</span>
+                                    <div class="doctor-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8</span>
+                                        <span class="reviews">(98)</span>
+                                    </div>
+                                </div>
+                                <h3>Dr. Carlos Rodríguez</h3>
+                                <div class="doctor-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Montevideo</span>
+                                </div>
+                                <div class="doctor-clinic">
+                                    <i class="fas fa-hospital"></i>
+                                    <span>Médica Uruguaya, Hospital Británico</span>
+                                </div>
+                                <p class="doctor-price">$1500 UYU / consulta</p>
+                            </div>
+                            <div class="doctor-footer">
+                                <a href="doctor-detalle.html?id=2" class="btn btn-primary btn-block">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Agendar Consulta
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doctor-card">
+                            <div class="doctor-image">
+                                <img src="img/dra2.jpg" alt="Dra. Laura Sánchez">
+                            </div>
+                            <div class="doctor-content">
+                                <div class="doctor-header">
+                                    <span class="doctor-specialty">Pediatría</span>
+                                    <div class="doctor-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9</span>
+                                        <span class="reviews">(156)</span>
+                                    </div>
+                                </div>
+                                <h3>Dra. Laura Sánchez</h3>
+                                <div class="doctor-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Canelones</span>
+                                </div>
+                                <div class="doctor-clinic">
+                                    <i class="fas fa-hospital"></i>
+                                    <span>CASMU, SMU</span>
+                                </div>
+                                <p class="doctor-price">$1100 UYU / consulta</p>
+                            </div>
+                            <div class="doctor-footer">
+                                <a href="doctor-detalle.html?id=3" class="btn btn-outline btn-block disabled">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    No Disponible
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doctor-card">
+                            <div class="doctor-image">
+                                <img src="img/cardiologia.webp" alt="Dr. Miguel Hernández">
+                            </div>
+                            <div class="doctor-content">
+                                <div class="doctor-header">
+                                    <span class="doctor-specialty">Dermatología</span>
+                                    <div class="doctor-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.7</span>
+                                        <span class="reviews">(87)</span>
+                                    </div>
+                                </div>
+                                <h3>Dr. Miguel Hernández</h3>
+                                <div class="doctor-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Montevideo</span>
+                                </div>
+                                <div class="doctor-clinic">
+                                    <i class="fas fa-hospital"></i>
+                                    <span>Hospital Británico, Summum</span>
+                                </div>
+                                <p class="doctor-price">$1300 UYU / consulta</p>
+                            </div>
+                            <div class="doctor-footer">
+                                <a href="doctor-detalle.html?id=4" class="btn btn-primary btn-block">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Agendar Consulta
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </div>
+                    <p>Conectando pacientes con los mejores especialistas médicos para un cuidado de salud de calidad en Uruguay.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html">Buscar Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                        <li><a href="#">Blog de Salud</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suscribite</h3>
+                    <p>Recibí nuestras últimas noticias y ofertas especiales.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2023</span> MediAgenda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            // Set current year in footer
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+            
+            // Price range slider
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            
+            if (priceRange && priceValue) {
+                priceValue.textContent = '$' + priceRange.value + ' UYU';
+                
+                priceRange.addEventListener('input', function() {
+                    priceValue.textContent = '$' + this.value + ' UYU';
+                });
+            }
+            
+            // Search button
+            const searchButton = document.getElementById('searchButton');
+            
+            if (searchButton) {
+                searchButton.addEventListener('click', function() {
+                    // Get search values
+                    const doctorSearch = document.getElementById('doctorSearch').value;
+                    const locationFilter = document.getElementById('locationFilter').value;
+                    const clinicaFilter = document.getElementById('clinicaFilter').value;
+                    
+                    // In a real app, this would filter the results
+                    console.log('Search:', doctorSearch, locationFilter, clinicaFilter);
+                    
+                    // For demo purposes, we'll just show an alert
+                    alert('Búsqueda realizada con éxito');
+                });
+            }
+            
+            // Sort options
+            const sortBy = document.getElementById('sortBy');
+            
+            if (sortBy) {
+                sortBy.addEventListener('change', function() {
+                    // In a real app, this would sort the results
+                    console.log('Sort by:', this.value);
+                });
+            }
+            
+            // Check URL parameters to set filters
+            const urlParams = new URLSearchParams(window.location.search);
+            const especialidad = urlParams.get('especialidad');
+            
+            if (especialidad) {
+                // Check the corresponding specialty checkbox
+                const specialtyCheckbox = document.querySelector(`input[name="specialty"][value="${especialidad}"]`);
+                if (specialtyCheckbox) {
+                    specialtyCheckbox.checked = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

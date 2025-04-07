@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - MediAgenda Uruguay</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html">Médicos</a></li>
+                        <li><a href="clinicas.html">Mutualistas</a></li>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons user-menu" id="headerButtons">
+                    <div class="user-dropdown">
+                        <button class="user-dropdown-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="userDisplayName">Mi Perfil</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown-content">
+                            <a href="mi-perfil.html" class="active">
+                                <i class="fas fa-user"></i>
+                                Mi Perfil
+                            </a>
+                            <a href="mis-citas.html">
+                                <i class="fas fa-calendar-check"></i>
+                                Mis Consultas
+                            </a>
+                            <a href="historial-medico.html">
+                                <i class="fas fa-notes-medical"></i>
+                                Historial Médico
+                            </a>
+                            <a href="#" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar Sesión
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="doctores.html">Médicos</a></li>
+                <li><a href="clinicas.html">Mutualistas</a></li>
+                <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                <li><a href="mi-perfil.html">Mi Perfil</a></li>
+                <li><a href="mis-citas.html">Mis Consultas</a></li>
+                <li><a href="historial-medico.html">Historial Médico</a></li>
+                <li><a href="#" id="mobileLogoutBtn">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-user">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="profileUserName">Usuario</h3>
+                        <p id="profileUserEmail">usuario@ejemplo.com</p>
+                    </div>
+                    <ul class="profile-menu">
+                        <li class="active">
+                            <a href="mi-perfil.html">
+                                <i class="fas fa-user"></i>
+                                Información Personal
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mis-citas.html">
+                                <i class="fas fa-calendar-check"></i>
+                                Mis Consultas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="historial-medico.html">
+                                <i class="fas fa-notes-medical"></i>
+                                Historial Médico
+                            </a>
+                        </li>
+                        <li>
+                            <a href="configuracion.html">
+                                <i class="fas fa-cog"></i>
+                                Configuración
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="sidebarLogoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-header">
+                        <h2>Información Personal</h2>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-edit"></i>
+                            Editar Perfil
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <div class="info-group">
+                            <h3>Datos Personales</h3>
+                            <div class="info-row">
+                                <div class="info-label">Nombre Completo</div>
+                                <div class="info-value" id="profileFullName">Usuario Demo</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Correo Electrónico</div>
+                                <div class="info-value" id="profileEmail">usuario@ejemplo.com</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Teléfono</div>
+                                <div class="info-value">No especificado</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Fecha de Nacimiento</div>
+                                <div class="info-value">No especificado</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Género</div>
+                                <div class="info-value">No especificado</div>
+                            </div>
+                        </div>
+                        <div class="info-group">
+                            <h3>Información Médica</h3>
+                            <div class="info-row">
+                                <div class="info-label">Mutualista</div>
+                                <div class="info-value">No especificado</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Número de Socio</div>
+                                <div class="info-value">No especificado</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Alergias</div>
+                                <div class="info-value">No especificado</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Medicación Actual</div>
+                                <div class="info-value">No especificado</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn btn-primary">Completar Perfil</button>
+                        <button class="btn btn-outline">Cambiar Contraseña</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </div>
+                    <p>Conectando pacientes con los mejores especialistas médicos para un cuidado de salud de calidad en Uruguay.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html">Buscar Médicos</a></li>
+                        <li><a href="clinicas.html">Mutualistas</a></li>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="blog.html">Blog de Salud</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suscribite</h3>
+                    <p>Recibí nuestras últimas noticias y ofertas especiales.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> MediAgenda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
+

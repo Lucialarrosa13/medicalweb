@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - MediAgenda Uruguay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html">Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons" id="headerButtons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary active">Registrarse</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="doctores.html">Médicos</a></li>
+                <li><a href="#">Mutualistas</a></li>
+                <li><a href="#">Cómo Funciona</a></li>
+                <li class="mobile-auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+                    <a href="registro.html" class="btn btn-primary active">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Crear Cuenta</h2>
+                        <p>Registrate para comenzar a agendar tus consultas médicas</p>
+                    </div>
+                    <form id="registerForm" class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nombre</label>
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="firstName" name="firstName" placeholder="Tu nombre" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Apellido</label>
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Tu apellido" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerUsername">Usuario</label>
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="registerUsername" name="registerUsername" placeholder="Elige un nombre de usuario" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Contraseña</label>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="registerPassword" name="registerPassword" placeholder="Crea una contraseña" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Contraseña</label>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repite tu contraseña" required>
+                            </div>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="terms" id="terms" required>
+                                <span class="checkmark"></span>
+                                Acepto los <a href="#">Términos y Condiciones</a>
+                            </label>
+                        </div>
+                        <div id="registerMessage" class="message-container"></div>
+                        <button type="submit" class="btn btn-primary btn-block">Crear Cuenta</button>
+                    </form>
+                    <div class="auth-footer">
+                        <p>¿Ya tenés una cuenta? <a href="login.html">Iniciá Sesión</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediAgenda</span>
+                    </div>
+                    <p>Conectando pacientes con los mejores especialistas médicos para un cuidado de salud de calidad en Uruguay.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="doctores.html">Buscar Médicos</a></li>
+                        <li><a href="#">Mutualistas</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                        <li><a href="#">Blog de Salud</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suscribite</h3>
+                    <p>Recibí nuestras últimas noticias y ofertas especiales.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2023</span> MediAgenda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            // Set current year in footer
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+            
+            // Register form submission
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const firstName = document.getElementById('firstName').value;
+                    const lastName = document.getElementById('lastName').value;
+                    const email = document.getElementById('email').value;
+                    const username = document.getElementById('registerUsername').value;
+                    const password = document.getElementById('registerPassword').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
+                    const terms = document.getElementById('terms').checked;
+                    const messageContainer = document.getElementById('registerMessage');
+                    
+                    // Validate form
+                    if (!terms) {
+                        if (messageContainer) {
+                            messageContainer.textContent = 'Debes aceptar los términos y condiciones para continuar.';
+                            messageContainer.className = 'message-container error';
+                        }
+                        return;
+                    }
+                    
+                    if (password !== confirmPassword) {
+                        if (messageContainer) {
+                            messageContainer.textContent = 'Las contraseñas no coinciden. Intenta nuevamente.';
+                            messageContainer.className = 'message-container error';
+                        }
+                        return;
+                    }
+                    
+                    // Store user data in localStorage
+                    const userData = {
+                        firstName,
+                        lastName,
+                        email,
+                        username,
+                        fullName: `${firstName} ${lastName}`
+                    };
+                    
+                    localStorage.setItem('userData', JSON.stringify(userData));
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('username', username);
+                    
+                    // Show success message
+                    if (messageContainer) {
+                        messageContainer.textContent = '¡Registro exitoso! Redirigiendo...';
+                        messageContainer.className = 'message-container success';
+                    }
+                    
+                    // Redirect to profile page after a short delay
+                    setTimeout(function() {
+                        window.location.href = 'mi-perfil.html';
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
